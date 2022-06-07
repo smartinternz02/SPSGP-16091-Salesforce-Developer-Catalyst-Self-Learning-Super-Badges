@@ -1,0 +1,41 @@
+HomeAPEX SPECIALIST SUPERBADGE - CHALLENGEAPEX SPECIALIST SUPERBADGE-SOLUTIONS -CHALLENGE 3
+APEX SPECIALIST SUPERBADGE-SOLUTIONS -CHALLENGE 3
+Ankit VijayJuly 17, 2021
+Last updated -April 17th,2022
+
+APEX SPECIALIST SUPERBADGE-SOLUTIONS -CHALLENGE 3-Schedule synchronization
+
+Build scheduling logic that executes your callout and runs your code daily. The name of the schedulable class should be WarehouseSyncSchedule, and the scheduled job should be named WarehouseSyncScheduleJob.
+
+
+
+
+
+Solution
+
+Go to the developer console use below code :
+WarehouseSyncShedule.apxc :-
+
+global with sharing class WarehouseSyncSchedule implements Schedulable{
+    global void execute(SchedulableContext ctx){
+        System.enqueueJob(new WarehouseCalloutService());
+    }
+}
+
+
+
+Save it , after that...
+
+
+
+
+
+Go to setup -> Seacrh in Quick find box -> Apex Classes -> click Schedule Apex and Jb Name = WarehouseSyncScheduleJob , Apex Class = WarehouseSyncSchedule as it is below shown in the image ,
+
+
+
+
+
+
+
+Now check challenge.
